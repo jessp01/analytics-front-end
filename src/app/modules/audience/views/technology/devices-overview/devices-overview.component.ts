@@ -262,9 +262,11 @@ export class DevicesOverviewComponent implements OnDestroy {
   private _getOverviewData(table: KalturaReportTable, relevantFields: string[]): { data: { [key: string]: string }[], columns: string[] } {
     const { tableData, columns } = this._reportService.parseTableData(table, this._dataConfig.table);
     const data = tableData.reduce((data, item) => {
-      if (this.allowedDevices.indexOf(item.device) > -1) {
+	console.log('device');
+	console.log(item.device);
+	//if (this.allowedDevices.indexOf(item.device) > -1) {
         data.push(item);
-      } else {
+	/*} else {
         const otherIndex = data.findIndex(({ device }) => device === 'OTHER');
         if (otherIndex !== -1) {
           relevantFields.forEach(key => {
@@ -274,7 +276,7 @@ export class DevicesOverviewComponent implements OnDestroy {
           item.device = 'OTHER';
           data.push(item);
         }
-      }
+	}*/
       return data;
     }, []);
     

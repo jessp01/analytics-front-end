@@ -25,7 +25,7 @@ export class EngagementMiniHighlightsComponent extends EngagementBaseReportCompo
   @Input() dateFilterComponent: DateFilterComponent;
   
   private _order = '-month_id';
-  private _reportType = KalturaReportType.userEngagementTimeline;
+  private _reportType = KalturaReportType.topContent;
   private _dataConfig: ReportDataConfig;
   
   protected _componentId = 'mini-highlights';
@@ -157,6 +157,8 @@ export class EngagementMiniHighlightsComponent extends EngagementBaseReportCompo
   }
 
   private _handleTotals(totals: KalturaReportTotal): void {
+    console.log('zoe and jess');
+    console.log(totals);
     this._tabsData = this._reportService.parseTotals(totals, this._dataConfig.totals);
   }
 

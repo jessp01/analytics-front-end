@@ -99,14 +99,11 @@ export class EngagementImpressionsComponent extends EngagementBaseReportComponen
   }
 
   public updateFunnel(): void {
-    const plays = (this._funnelData.plays / this._funnelData.impressions * 100).toFixed(2);
+    const plays = (this._funnelData.plays).toFixed(2);
     const playThrough = (this._funnelData.playThrough['perc' + this._selectedPlaythrough] / this._funnelData.plays * 100).toFixed(2);
     this.echartsIntance.setOption({
       series: [{
         data: [
-          {
-            value: 100,
-            name: this._translate.instant('app.engagement.playerImpressions')},
           {
             value: Math.round(parseFloat(plays)),
             name: this._translate.instant('app.engagement.plays')
@@ -204,8 +201,10 @@ export class EngagementImpressionsComponent extends EngagementBaseReportComponen
     this.compareEchartsIntance.setOption({series: [{left: '0%'}]}, false);
 
     const data = compare.totals.data.split(analyticsConfig.valueSeparator);
+    console.log("james and zoe");
+    console.log(data);
     this.compareFunnelData = {
-      impressions: data[6].length ? parseInt(data[6]) : 0,
+    //impressions: data[6].length ? parseInt(data[6]) : 0,
       plays: data[0].length ? parseInt(data[0]) : 0,
       playThrough: {
         perc25: data[1].length ? parseInt(data[1]) : 0,
@@ -218,13 +217,9 @@ export class EngagementImpressionsComponent extends EngagementBaseReportComponen
   }
 
   private updateCompareFunnel(): void {
-    const plays = (this.compareFunnelData.plays / this.compareFunnelData.impressions * 100).toFixed(2);
-    const playThrough = (this.compareFunnelData.playThrough['perc' + this._selectedPlaythrough] / this.compareFunnelData.impressions * 100).toFixed(2);
+    const plays = (this.compareFunnelData.plays).toFixed(2);
+    const playThrough = (this.compareFunnelData.playThrough['perc' + this._selectedPlaythrough]).toFixed(2);
     this.compareEchartsIntance.setOption({series: [{data: [
-          {
-            value: 100,
-            name: this._translate.instant('app.engagement.playerImpressions')
-          },
           {
             value: Math.round(parseFloat(plays)),
             name: this._translate.instant('app.engagement.plays')
@@ -241,8 +236,10 @@ export class EngagementImpressionsComponent extends EngagementBaseReportComponen
     this.echartsIntance.setOption({series: [{width: '30%'}]}, false);
     this.echartsIntance.setOption({series: [{left: '65%'}]}, false);
     const data = totals.data.split(analyticsConfig.valueSeparator);
+    console.log("james and zoe");
+    console.log(data);
     this._funnelData = {
-      impressions: data[6].length ? parseInt(data[6]) : 0,
+    //impressions: data[6].length ? parseInt(data[6]) : 0,
       plays: data[0].length ? parseInt(data[0]) : 0,
       playThrough: {
         perc25: data[1].length ? parseInt(data[1]) : 0,

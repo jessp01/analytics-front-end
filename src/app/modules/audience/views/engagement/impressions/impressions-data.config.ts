@@ -15,9 +15,6 @@ export class ImpressionsDataConfig extends ReportDataBaseConfig {
     return {
       [ReportDataSection.totals]: {
         fields: {
-          'count_loads': {
-            format: value => ReportHelper.numberOrNA(value)
-          },
           'count_plays': {
             format: value => ReportHelper.numberOrNA(value)
           },
@@ -31,6 +28,9 @@ export class ImpressionsDataConfig extends ReportDataBaseConfig {
             format: value => ReportHelper.numberOrNA(value)
           },
           'count_plays_100': {
+            format: value => ReportHelper.numberOrNA(value)
+          }
+          'play_through_ratio': {
             format: value => ReportHelper.numberOrNA(value)
           }
         }

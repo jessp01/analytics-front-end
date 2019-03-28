@@ -23,7 +23,7 @@ export class MiniPeakDayComponent extends EngagementBaseReportComponent {
   @Input() dateFilterComponent: DateFilterComponent;
 
   private _order = '-count_plays';
-  private _reportType = KalturaReportType.userEngagementTimeline;
+  private _reportType = KalturaReportType.userEngagement;
   private _dataConfig: ReportDataConfig;
   
   protected _componentId = 'mini-peak-day';
@@ -76,6 +76,8 @@ export class MiniPeakDayComponent extends EngagementBaseReportComponent {
           this._peakDayData = null;
 
           if (report.table && report.table.header && report.table.data) {
+	  console.log("zfp");
+	  console.log(report.table);
             this._handleTable(report.table, compare); // handle table
           }
           this._isBusy = false;

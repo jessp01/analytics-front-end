@@ -24,7 +24,8 @@ export class EngagementHighlightsComponent extends EngagementBaseReportComponent
   @Input() dateFilterComponent: DateFilterComponent;
   
   private _order = '-month_id';
-  private _reportType = KalturaReportType.userEngagementTimeline;
+  //private _reportType = KalturaReportType.userEngagementTimeline;
+  private _reportType = KalturaReportType.topContent;
   private _dataConfig: ReportDataConfig;
   
   protected _componentId = 'highlights';
@@ -205,6 +206,8 @@ export class EngagementHighlightsComponent extends EngagementBaseReportComponent
   
   private _handleTotals(totals: KalturaReportTotal): void {
     this._tabsData = this._reportService.parseTotals(totals, this._dataConfig.totals, this._selectedMetrics);
+    console.log('zoe');
+    console.log(this._tabsData);
   }
   
   private _handleGraphs(graphs: KalturaReportGraph[]): void {
