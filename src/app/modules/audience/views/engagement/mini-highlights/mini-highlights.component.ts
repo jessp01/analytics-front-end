@@ -157,8 +157,6 @@ export class EngagementMiniHighlightsComponent extends EngagementBaseReportCompo
   }
 
   private _handleTotals(totals: KalturaReportTotal): void {
-    console.log('zoe and jess');
-    console.log(totals);
     this._tabsData = this._reportService.parseTotals(totals, this._dataConfig.totals);
   }
 

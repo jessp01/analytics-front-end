@@ -58,8 +58,6 @@ export class TopVideosTableComponent {
     if (event.order !== this._currentOrderDirection) {
       this._currentOrderDirection = order;
       this._pager.pageIndex = 1;
-      console.log("zoe and james");
-	console.log(this._originalTable);
       this._tableData = this._originalTable
         .sort((a, b) => {
           const valA = a.index;

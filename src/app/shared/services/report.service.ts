@@ -235,8 +235,6 @@ export class ReportService implements OnDestroy {
     var val = tabsData.sort((a, b) => {
       return a.sortOrder - b.sortOrder;
       });
-      console.log('val');
-      console.log(val);
     return val;
   }
   

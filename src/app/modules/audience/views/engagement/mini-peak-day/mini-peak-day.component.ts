@@ -76,8 +76,6 @@ export class MiniPeakDayComponent extends EngagementBaseReportComponent {
           this._peakDayData = null;
 
           if (report.table && report.table.header && report.table.data) {
-	  console.log("zfp");
-	  console.log(report.table);
             this._handleTable(report.table, compare); // handle table
           }
           this._isBusy = false;

@@ -206,7 +206,6 @@ export class EngagementHighlightsComponent extends EngagementBaseReportComponent
   
   private _handleTotals(totals: KalturaReportTotal): void {
     this._tabsData = this._reportService.parseTotals(totals, this._dataConfig.totals, this._selectedMetrics);
-    console.log('zoe');
     console.log(this._tabsData);
   }
   

@@ -201,8 +201,6 @@ export class EngagementImpressionsComponent extends EngagementBaseReportComponen
     this.compareEchartsIntance.setOption({series: [{left: '0%'}]}, false);
 
     const data = compare.totals.data.split(analyticsConfig.valueSeparator);
-    console.log("james and zoe");
-    console.log(data);
     this.compareFunnelData = {
     //impressions: data[6].length ? parseInt(data[6]) : 0,
       plays: data[0].length ? parseInt(data[0]) : 0,
@@ -236,8 +234,6 @@ export class EngagementImpressionsComponent extends EngagementBaseReportComponen
     this.echartsIntance.setOption({series: [{width: '30%'}]}, false);
     this.echartsIntance.setOption({series: [{left: '65%'}]}, false);
     const data = totals.data.split(analyticsConfig.valueSeparator);
-    console.log("james and zoe");
-    console.log(data);
     this._funnelData = {
     //impressions: data[6].length ? parseInt(data[6]) : 0,
       plays: data[0].length ? parseInt(data[0]) : 0,
